@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Two') {
             environment {
-            ENV_VAR = "pipeline.google.com"
+            ENV_VAR = "pipeline-stage.google.com"
             }
 
             steps {
