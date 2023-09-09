@@ -17,9 +17,13 @@ pipeline {
             environment {
             ENV_VAR = "pipeline.google.com"
             }
-            
+
             steps {
-                sh "echo Hello World-stage-2"
+                sh '''
+                echo Hello World-stage-2
+                echo pipeline var = ${ENV_VAR}
+                '''
+                
             }
         }
         stage('Three') {
