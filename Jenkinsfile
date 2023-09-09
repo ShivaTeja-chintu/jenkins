@@ -4,6 +4,9 @@ pipeline {
         ENV_VAR = "pipeline.google.com"  // If we declare here it is pipe line leval variable
         SSH_CRED = credentials('SSH_CRED')
     }
+    triggers {
+    cron('*/1 * * * 0-7')
+    }
     triggers { pollSCM('*/1 * * * 1-5') }
     parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
@@ -13,6 +16,7 @@ pipeline {
         booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
 
         choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
    
