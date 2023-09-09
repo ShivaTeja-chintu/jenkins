@@ -1,10 +1,16 @@
 pipeline {
     agent any
+    environment{
+        ENV_VAR = "pipeline.google.com"
+    }
 
     stages {
         stage('one') {
             steps {
-                sh "echo Hello World-stage-1"
+                sh '''
+                echo Hello World-stage-1
+                echo pipeline var = {{ENV_VAR}}
+                '''
             }
         }
         stage('Two') {
