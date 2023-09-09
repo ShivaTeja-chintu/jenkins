@@ -1,6 +1,6 @@
 # Jenkins
 ```
-This is a jenkins repository created to hodt all learnings related to jenkins starting from basics to advance pipeline using both declarative pipeline and scripted pipelines using shared libraried 
+This is a jenkins repository created to host all learnings related to jenkins starting from basics to advance pipeline using both declarative pipeline and scripted pipelines using shared libraried 
 ```
 # Pipe Line Types:
 ```
