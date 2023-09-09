@@ -1,7 +1,8 @@
 pipeline {
     agent any
     environment {
-        ENV_VAR = "pipeline.google.com"
+        ENV_VAR = "pipeline.google.com"  // If we declare here it is pipe line leval variable
+        SSH_CRED = credentials('SSH_CRED')
     }
 
     stages {
@@ -14,8 +15,8 @@ pipeline {
             }
         }
         stage('Two') {
-            environment {
-            ENV_VAR = "pipeline-stage.google.com"
+            environment {                  
+            ENV_VAR = "pipeline-stage.google.com"  // if we declare here it is a stage variable 
             }
 
             steps {
