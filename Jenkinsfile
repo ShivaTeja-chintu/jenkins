@@ -11,6 +11,7 @@ pipeline {
                 sh '''
                 echo Hello World-stage-1
                 echo pipeline var = ${ENV_VAR}
+                env
                 '''
             }
         }
