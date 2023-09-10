@@ -44,7 +44,7 @@ pipeline {
             
         }
     }
-    stage('Two') {
+    stage('Three') {
         steps {
             sh '''
                 sleep 50
