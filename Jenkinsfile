@@ -18,40 +18,39 @@ pipeline {
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
    
-    stages {
-        stage('one') {
-            steps {
-                sh '''
-                echo Hello World-stage-1
-                echo pipeline var = ${ENV_VAR}
-                env
-                mvn -v
-                sleep 10
-                '''
-            }
+    
+    stage('one') {
+        steps {
+            sh '''
+            echo Hello World-stage-1
+            echo pipeline var = ${ENV_VAR}
+            env
+            mvn -v
+            sleep 10
+            '''
         }
-        stage('Two') {
-            environment {                  
-            ENV_VAR = "pipeline-stage.google.com"  // if we declare here it is a stage variable 
-            }
-
-            steps {
-                sh '''
-                echo Hello World-stage-2
-                echo pipeline var = ${ENV_VAR}
-                sleep 30
-                '''
-                
-            }
-        }
-        stage('Two') {
-            steps {
-                sh '''
-                    sleep 50
-                '''
-                
-            }
-        }
-
     }
+    stage('Two') {
+        environment {                  
+        ENV_VAR = "pipeline-stage.google.com"  // if we declare here it is a stage variable 
+        }
+
+        steps {
+            sh '''
+            echo Hello World-stage-2
+            echo pipeline var = ${ENV_VAR}
+            sleep 30
+            '''
+            
+        }
+    }
+    stage('Two') {
+        steps {
+            sh '''
+                sleep 50
+            '''
+            
+        }
+    }
+
 }
