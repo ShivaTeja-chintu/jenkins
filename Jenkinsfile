@@ -14,7 +14,7 @@ pipeline {
             {
                 
                 sh 'mvn clean'
-                sh 'mvn -v'
+                //sh 'mvn -v'
             }
         }
     }
