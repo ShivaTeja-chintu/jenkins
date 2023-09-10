@@ -5,6 +5,9 @@ pipeline {
         SSH_CRED = credentials('SSH_CRED')
     }
     triggers { pollSCM('*/59 * * * 0-7') }
+    tools {
+        maven 'apache-maven-3.0.1' 
+    }
     parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
         text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
