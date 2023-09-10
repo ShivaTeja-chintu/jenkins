@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        lable 'workstation'
+        label 'workstation'
     }
     environment {
         ENV_VAR = "pipeline.google.com"  // If we declare here, it is a pipeline-level variable
