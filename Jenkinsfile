@@ -25,7 +25,7 @@ pipeline {
                 echo pipeline var = ${ENV_VAR}
                 env
                 mvn clean
-                mvn - version
+                mvn -v
                 '''
             }
         }
