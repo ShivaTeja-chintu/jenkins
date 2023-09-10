@@ -44,16 +44,14 @@ pipeline {
                 
             }
         }
-        stage('Three') {
+        stage('Two') {
             steps {
-                sh "echo Hello World-stage-3"
-            }   sh "sleep 50"
-        }
-        stage('Four') {
-            steps {
-                sh "echo Hello World-stage-4"
-                sh "sleep 50"
+                sh '''
+                    sleep 50
+                '''
+                
             }
         }
+
     }
 }
