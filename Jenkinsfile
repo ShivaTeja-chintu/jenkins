@@ -30,6 +30,7 @@ pipeline {
                         echo pipeline var = ${ENV_VAR}
                         env
                         mvn -v
+                        hostname
                         sleep 10
                         '''
                     }
