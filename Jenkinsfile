@@ -10,7 +10,7 @@ pipeline {
     tools {
         // Define your Maven tool here
         // Example:
-        maven 'Maven-3.8.6'
+        maven 'maven-3.8.6'
     }
     parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
