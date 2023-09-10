@@ -26,6 +26,7 @@ pipeline {
                 echo pipeline var = ${ENV_VAR}
                 env
                 mvn -v
+                sleep 10
                 '''
             }
         }
@@ -38,6 +39,7 @@ pipeline {
                 sh '''
                 echo Hello World-stage-2
                 echo pipeline var = ${ENV_VAR}
+                sleep 30
                 '''
                 
             }
@@ -45,11 +47,12 @@ pipeline {
         stage('Three') {
             steps {
                 sh "echo Hello World-stage-3"
-            }
+            }   sh "sleep 50"
         }
         stage('Four') {
             steps {
                 sh "echo Hello World-stage-4"
+                sh "sleep 50"
             }
         }
     }
