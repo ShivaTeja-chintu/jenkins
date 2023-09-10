@@ -7,7 +7,7 @@ pipeline {
     }
     triggers { pollSCM('*/59 * * * 0-7') }
     tools {
-        maven 'maven-3.8.6' 
+        maven 'maven-3.9.4' 
     }
     parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
